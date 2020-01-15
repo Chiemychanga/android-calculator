@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     TextView result;
     EditText number1, number2;
     Button add, subtract, multiply, divide;
+    ImageView meme;
 
     float result_num;
     int num1, num2;
@@ -32,13 +34,22 @@ public class MainActivity extends AppCompatActivity {
         multiply = (Button)findViewById(R.id.multiply);
         divide = (Button)findViewById(R.id.divide);
 
+        meme = (ImageView)findViewById(R.id.meme);
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 num1 = Integer.parseInt(number1.getText().toString());
                 num2 = Integer.parseInt(number2.getText().toString());
-                result_num = num1 + num2;
+                if(num1 == 9 && num2 == 10) {
+                    result_num = 21;
+                    meme.setVisibility(View.VISIBLE);
+                }
+                else {
+                    result_num = num1 + num2;
+                    meme.setVisibility(View.INVISIBLE);
+                }
                 result.setText(String.valueOf(result_num));
 
             }

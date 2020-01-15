@@ -10,20 +10,25 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
     <EditText
         android:id="@+id/number1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Number 1"
         android:ems="10"
-        android:inputType="number" />
+        android:hint="Number 1"
+        android:inputType="number"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack" />
 
     <EditText
         android:id="@+id/number2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:hint="Number 2"
         android:ems="10"
         android:inputType="number" />
@@ -33,6 +38,9 @@
         android:textSize="25sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        android:textColor="@color/colorYellow"
+        android:textStyle="bold"
         android:text="Result" />
 
     <Button
@@ -58,4 +66,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Divide" />
+
+    <ImageView
+        android:id="@+id/meme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/meme" />
 </LinearLayout>
